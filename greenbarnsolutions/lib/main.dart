@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screenStateProvider.dart';
 import 'customAppBar.dart';
+import 'Screens/about.dart';
+import 'Screens/partner.dart';
+import 'Screens/contact.dart';
 import 'theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,27 +33,98 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(alignment: Alignment.center, children: [
       Container(
-        //color: Colors.grey,
         padding: const EdgeInsets.all(1),
         child: SingleChildScrollView(
           child: Column(
             children: [
               CustomAppBar(),
-              Container(
-                color: Colors.grey.withOpacity(0.5),
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                child: Image.asset(
-                  'assets/electrictiller.jpg',
-                  fit: BoxFit.fitWidth,
-                ),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    //     0.6, // Adjust the height as needed
+                    child: Image.asset(
+                      'assets/electrictiller.jpg',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  ColoredBox(
+                    color: Colors.black.withOpacity(0.2),
+                    child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height),
+                  ),
+                  TextWidget(),
+                  Column(
+                    children: [
+                      SizedBox(
+                        height: 12,
+                      ),
+                      PageWidget(),
+                    ],
+                  )
+                ],
               ),
             ],
           ),
         ),
       ),
-      Positioned(bottom: 0.01, child: PageWidget())
     ]);
+  }
+}
+
+class TextWidget extends StatelessWidget {
+  const TextWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      // width: me,
+      // height: 300,
+      //color: Colors.red,
+      child: Padding(
+        padding: const EdgeInsets.all(25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text(
+                'A Green, Sustainable & Efficient \n Electric Tiller',
+                textAlign: TextAlign.justify,
+                style: GoogleFonts.play(
+                  letterSpacing: 2.5,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 35,
+                ),
+              ),
+              Expanded(child: Container())
+            ]),
+            SizedBox(
+              height: 350,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Expanded(child: Container()),
+                Text(
+                  'Energy 1200W \n  RPM 100 \n   Weight 40KG',
+                  textAlign: TextAlign.justify,
+                  style: GoogleFonts.play(
+                    letterSpacing: 2.5,
+                    color: Colors.grey.shade400,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -76,6 +150,9 @@ class _PageWidgetState extends State<PageWidget> {
             case 'About':
               child = About(); // Replace About() with your About widget
               break;
+            case 'Contact':
+              child = Contact(); // Replace About() with your About widget
+              break;
             case 'Partner':
               child = Partner(); // Replace Partner() with your Partner widget
               break;
@@ -88,50 +165,6 @@ class _PageWidgetState extends State<PageWidget> {
             child: child,
           );
         },
-      ),
-    );
-  }
-}
-
-class About extends StatefulWidget {
-  const About({super.key});
-
-  @override
-  State<About> createState() => _AboutState();
-}
-
-class _AboutState extends State<About> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black87,
-      width: MediaQuery.of(context).size.width * 0.8,
-      height: MediaQuery.of(context).size.height * 0.8,
-      child: Text(
-        'about',
-        style: TextStyle(color: Colors.white),
-      ),
-    );
-  }
-}
-
-class Partner extends StatefulWidget {
-  const Partner({super.key});
-
-  @override
-  State<Partner> createState() => _PartnerState();
-}
-
-class _PartnerState extends State<Partner> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black87,
-      width: MediaQuery.of(context).size.width * 0.8,
-      height: MediaQuery.of(context).size.height * 0.8,
-      child: Text(
-        'Partner',
-        style: TextStyle(color: Colors.white),
       ),
     );
   }
