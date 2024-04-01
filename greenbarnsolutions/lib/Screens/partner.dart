@@ -14,7 +14,7 @@ class _PartnerState extends State<Partner> {
       color: Colors.black87,
       width: MediaQuery.of(context).size.width * 0.8,
       height: MediaQuery.of(context).size.height * 0.85,
-      child: Text(
+      child: const Text(
         'Partner',
         style: TextStyle(color: Colors.white),
       ),

@@ -5,17 +5,28 @@ import 'customAppBar.dart';
 import 'Screens/about.dart';
 import 'Screens/partner.dart';
 import 'Screens/contact.dart';
-import 'theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+import 'package:firebase_core/firebase_core.dart';
+
+void main() async {
+  await Firebase.initializeApp(
+    options: const FirebaseOptions(
+      apiKey: "AIzaSyAqHy-0lvvECx6S5p0BcjqZArtOFTLCo-4",
+      databaseURL: "https://greenbarnsolutions.firebaseio.com/",
+      appId: "1:774326429307:web:cbd9cb83c8438753a424de",
+      projectId: "greenbarnsolutions",
+      messagingSenderId: "774326429307",
+      // Other options can also be set here
+    ),
+  );
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
             create: (_) => ScreenStateProvider()) // Change this line
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         title: 'Green Barn Solutions',
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -27,7 +38,7 @@ void main() {
 }
 
 class Home extends StatelessWidget {
-  Home({super.key});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +48,7 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              CustomAppBar(),
+              const CustomAppBar(),
               Stack(
                 alignment: Alignment.center,
                 children: [
@@ -50,14 +61,15 @@ class Home extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  ColoredBox(
-                    color: Colors.black.withOpacity(0.2),
-                    child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height),
-                  ),
-                  TextWidget(),
-                  Column(
+                  //  ColoredBox(
+                  // color: Colors.white.withOpacity(0.2),
+                  //child:
+                  SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height),
+                  //  ),
+                  const TextWidget(),
+                  const Column(
                     children: [
                       SizedBox(
                         height: 12,
@@ -102,7 +114,7 @@ class TextWidget extends StatelessWidget {
               ),
               Expanded(child: Container())
             ]),
-            SizedBox(
+            const SizedBox(
               height: 350,
             ),
             Row(
@@ -145,23 +157,23 @@ class _PageWidgetState extends State<PageWidget> {
           // Use provider.screenState to determine which widget to display
           switch (provider.screenState) {
             case 'Home':
-              child = Container(); // Replace Container() with your Home widget
+              child = Container();
               break;
             case 'About':
-              child = About(); // Replace About() with your About widget
+              child = const About();
               break;
             case 'Contact':
-              child = Contact(); // Replace About() with your About widget
+              child = const Contact();
               break;
             case 'Partner':
-              child = Partner(); // Replace Partner() with your Partner widget
+              child = const Partner();
               break;
             default:
               child = Container();
               break;
           }
           return AnimatedSwitcher(
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             child: child,
           );
         },

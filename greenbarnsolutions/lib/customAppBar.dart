@@ -39,7 +39,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                   String state = 'Contact';
                   provider.updateState(state);
                 },
-                child: HoverContainer(text: 'Contact')),
+                child: const HoverContainer(text: 'Contact')),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.005,
             ),
@@ -51,7 +51,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 String state = 'About';
                 provider.updateState(state);
               },
-              child: HoverContainer(
+              child: const HoverContainer(
                 text: 'About',
               ),
             ),
@@ -66,7 +66,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 String state = 'Partner';
                 provider.updateState(state);
               },
-              child: HoverContainer(
+              child: const HoverContainer(
                 text: 'Partner',
               ),
             ),
@@ -81,7 +81,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                 String state = 'Dontate';
                 provider.updateState(state);
               },
-              child: HoverContainer(
+              child: const HoverContainer(
                 text: 'Dontate',
               ),
             ),

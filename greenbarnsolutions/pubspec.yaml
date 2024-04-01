@@ -1,5 +1,5 @@
 name: greenbarnsolutions
-description: A new Flutter project.
+description: The first ever revolutonary electric rotary tiller.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -12,8 +12,11 @@ dependencies:
   flutter:
     sdk: flutter
     
-  google_fonts: ^6.1.0
+  google_fonts: 6.1.0
   provider:
+  firebase_core:
+  firebase_database:
+  cloud_firestore: 
 
 
 dev_dependencies:

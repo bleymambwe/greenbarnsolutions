@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-final double titleSize = 20;
+const double titleSize = 20;
 
-final Color firstColor = Color(0xFFD7BE96);
-final Color secColor = Color(0xFFE5E7E);
+const Color firstColor = Color(0xFFD7BE96);
+const Color secColor = Color(0x0ffe5e7e);
 
 class HoverContainer extends StatefulWidget {
   final String text;
 
-  HoverContainer({required this.text});
+  const HoverContainer({super.key, required this.text});
 
   @override
   _HoverContainerState createState() => _HoverContainerState();

@@ -15,7 +15,7 @@ class _AboutState extends State<About> {
       color: Colors.black87,
       width: MediaQuery.of(context).size.width * 0.8,
       height: MediaQuery.of(context).size.height * 0.8,
-      child: Text(
+      child: const Text(
         'about',
         style: TextStyle(color: Colors.white),
       ),
