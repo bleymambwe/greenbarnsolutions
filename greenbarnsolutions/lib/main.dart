@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:greenbarnsolutions/firebase_options.dart';
+import 'package:greenbarnsolutions/theme.dart';
 import 'package:provider/provider.dart';
 import 'screenStateProvider.dart';
 import 'customAppBar.dart';
@@ -11,14 +13,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: "AIzaSyAqHy-0lvvECx6S5p0BcjqZArtOFTLCo-4",
-      databaseURL: "https://greenbarnsolutions.firebaseio.com/",
-      appId: "1:774326429307:web:cbd9cb83c8438753a424de",
-      projectId: "greenbarnsolutions",
-      messagingSenderId: "774326429307",
-      // Other options can also be set here
-    ),
+    options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(
     MultiProvider(
@@ -42,48 +37,123 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(alignment: Alignment.center, children: [
-      Container(
-        padding: const EdgeInsets.all(1),
-        child: SingleChildScrollView(
-          child: Column(
+    return Column(
+      children: [
+        const CustomAppBar(),
+        Expanded(
+          child: Stack(
+            alignment: Alignment.center,
             children: [
-              const CustomAppBar(),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    //     0.6, // Adjust the height as needed
-                    child: Image.asset(
-                      'assets/electrictiller.jpg',
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  //  ColoredBox(
-                  // color: Colors.white.withOpacity(0.2),
-                  //child:
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height),
-                  //  ),
-                  const TextWidget(),
-                  const Column(
+              Container(
+                padding: const EdgeInsets.all(1),
+                child: SingleChildScrollView(
+                  child: Column(
                     children: [
-                      SizedBox(
-                        height: 12,
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: Image.asset(
+                              'assets/electrictiller.jpg',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          const TextWidget(),
+                          const Column(
+                            children: [
+                              SizedBox(
+                                height: 12,
+                              ),
+                              PageWidget(),
+                            ],
+                          )
+                        ],
                       ),
-                      PageWidget(),
+                      Container(
+                          // width:MediaQuery.of(context).size.width ,
+                          color: Colors.grey.shade100,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Column(
+                                children: [],
+                              ),
+                              Row(
+                                children: [
+                                  Expanded(
+                                      child: Container(
+                                    padding: const EdgeInsets.all(20),
+                                    child: Column(
+                                      children: [
+                                        Text(
+                                          'Traction ',
+                                          textAlign: TextAlign.justify,
+                                          style: GoogleFonts.play(
+                                            letterSpacing: 2.5,
+                                            color: firstColor,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 35,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        ProgressTrack()
+                                      ],
+                                    ),
+                                  )),
+                                  SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width / 2,
+                                    child: Image.asset(
+                                      'assets/electrictiller_sideangle.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ))
                     ],
-                  )
-                ],
+                  ),
+                ),
               ),
             ],
           ),
         ),
-      ),
-    ]);
+      ],
+    );
+  }
+}
+
+class ProgressTrack extends StatefulWidget {
+  const ProgressTrack({super.key});
+
+  @override
+  State<ProgressTrack> createState() => _ProgressTrackState();
+}
+
+class _ProgressTrackState extends State<ProgressTrack> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Text('Technical Report'),
+            Container(
+              height: 20,
+              color: firstColor,
+              constraints: BoxConstraints(
+                maxWidth: 10,
+              ),
+            ),
+            Text('additional notes')
+          ],
+        )
+      ],
+    );
   }
 }
 
@@ -107,7 +177,7 @@ class TextWidget extends StatelessWidget {
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.play(
                   letterSpacing: 2.5,
-                  color: Colors.grey,
+                  color: Colors.white70,
                   fontWeight: FontWeight.bold,
                   fontSize: 35,
                 ),
@@ -126,7 +196,7 @@ class TextWidget extends StatelessWidget {
                   textAlign: TextAlign.justify,
                   style: GoogleFonts.play(
                     letterSpacing: 2.5,
-                    color: Colors.grey.shade400,
+                    color: Colors.grey.shade100,
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),

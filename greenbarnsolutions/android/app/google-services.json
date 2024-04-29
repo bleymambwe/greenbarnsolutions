@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "774326429307",
+    "project_id": "greenbarnsolutions",
+    "storage_bucket": "greenbarnsolutions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774326429307:android:a3a00029741b104ba424de",
+        "android_client_info": {
+          "package_name": "com.example.greenbarnsolutions"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKTVzFyI9M8cEJc3QG0Q5ghxtEXqXnbJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
