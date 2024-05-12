@@ -99,7 +99,27 @@ class Home extends StatelessWidget {
                                         SizedBox(
                                           height: 10,
                                         ),
-                                        ProgressTrack()
+                                        ProgressTrack(
+                                          title: 'Technical Report',
+                                          maxWidth: 75,
+                                          additionalNotesText:
+                                              'Much of the report is done only a summary of simulations is left',
+                                        ),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        ProgressTrack(
+                                            title: 'Technical Drawing',
+                                            additionalNotesText: '',
+                                            maxWidth: 85),
+                                        SizedBox(
+                                          height: 5,
+                                        ),
+                                        ProgressTrack(
+                                            title: 'Prototype',
+                                            additionalNotesText:
+                                                'Building of the prototype is yet to start',
+                                            maxWidth: 0)
                                       ],
                                     ),
                                   )),
@@ -128,7 +148,16 @@ class Home extends StatelessWidget {
 }
 
 class ProgressTrack extends StatefulWidget {
-  const ProgressTrack({super.key});
+  final String title;
+  final String additionalNotesText;
+  final double maxWidth;
+
+  const ProgressTrack({
+    Key? key,
+    required this.title,
+    required this.additionalNotesText,
+    required this.maxWidth,
+  }) : super(key: key);
 
   @override
   State<ProgressTrack> createState() => _ProgressTrackState();
@@ -137,22 +166,39 @@ class ProgressTrack extends StatefulWidget {
 class _ProgressTrackState extends State<ProgressTrack> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Text('Technical Report'),
-            Container(
-              height: 20,
-              color: firstColor,
-              constraints: BoxConstraints(
-                maxWidth: 10,
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(widget.title),
+              SizedBox(
+                width: 15,
               ),
-            ),
-            Text('additional notes')
-          ],
-        )
-      ],
+              Container(
+                height: 20,
+                color: firstColor, // Assuming firstColor is defined somewhere
+                constraints: BoxConstraints(
+                  maxWidth: widget.maxWidth,
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+            ],
+          ),
+          Text(widget.additionalNotesText),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            color: Colors.grey,
+            height: 2,
+            width: double.infinity,
+          )
+        ],
+      ),
     );
   }
 }
