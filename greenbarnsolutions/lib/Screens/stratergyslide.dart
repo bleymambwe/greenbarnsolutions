@@ -38,8 +38,9 @@ class StratergySlide extends StatelessWidget {
                       ProgressTrack(
                         title: 'Technical Report',
                         maxWidth: 75,
-                        additionalNotesText:
-                            'Much of the report is done only a summary of simulations is left',
+                        additionalNotesText: '''
+                           We are actively conducting research and compiling technical documentation on various aspects including agricultural cultivation principles, existing cultivating mechanisms, battery technology, and motor design. Our progress in these endeavors is currently at 80 \%, reflecting substantial completion in our efforts.  
+                            ''',
                       ),
                       SizedBox(
                         height: 5,
@@ -47,15 +48,15 @@ class StratergySlide extends StatelessWidget {
                       ProgressTrack(
                           title: 'Technical Drawing',
                           additionalNotesText: '',
-                          maxWidth: 85),
+                          maxWidth: 95),
                       SizedBox(
                         height: 5,
                       ),
                       ProgressTrack(
                           title: 'Prototype',
                           additionalNotesText:
-                              'Building of the prototype is yet to start',
-                          maxWidth: 0)
+                              'The construction of the prototype has not yet commenced.',
+                          maxWidth: 10)
                     ],
                   ),
                 )),
