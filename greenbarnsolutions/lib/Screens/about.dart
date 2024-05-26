@@ -14,16 +14,47 @@ class _AboutState extends State<About> {
       padding: const EdgeInsets.all(16.0),
       color: Colors.black87,
       width: MediaQuery.of(context).size.width * 0.8,
-      height: 700,
+      height: 930,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Column(
+            children: [
+              Text(
+                'Green Barn Solutions',
+                style: TextStyle(fontSize: 23, color: Colors.grey),
+              ),
+              // Text(
+              //   'Co-Founder',
+              //   style: TextStyle(
+              //       color: Colors.blueGrey,
+              //       fontSize: 18,
+              //       fontWeight: FontWeight.bold),
+              // ),
+            ],
+          ),
+          const SizedBox(height: 16.0),
+          Expanded(
+            child: Container(
+              height: double.infinity,
+              child: Text(
+                '''
+                We are building the world's first Electric Rotary Tiller, a sustainable solution designed to revolutionize farming practices by offering efficient cultivation for large fields. Powered by a robust 1471W battery capacity, our tiller excels in tilling soil up to 10mm deep, making it an indispensable tool for farmers seeking enhanced productivity. ''',
+                textAlign: TextAlign.justify,
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+          const SizedBox(height: 16.0),
           Row(
             children: [
               SizedBox(
                 width: 200,
                 height: 250,
                 child: Image.asset('blessingsmambwe.jpg'),
+              ),
+              SizedBox(
+                width: 30,
               ),
               Column(
                 children: [
@@ -45,8 +76,11 @@ class _AboutState extends State<About> {
           const SizedBox(height: 16.0),
           Expanded(
             child: Container(
+              height: double.infinity,
               child: Text(
-                '''  The Blessings Mambwe's expertise spans a diverse range of domains, showcasing a strong background in data science, machine learning, and innovative technological solutions. With experience at companies like Absa Bank Innovation Hub, ML Collective, Konkola Copper Mines, IO Technologies, Afrimeta, and Enlight, they have demonstrated proficiency in developing AI solutions, conducting research at the intersection of computer vision and reinforcement learning, and implementing efficient algorithms for various applications. Their skills encompass Python programming, PyTorch, machine learning model development (including Yolov8), data analysis, collaborative teamwork, innovative algorithm design, and full-stack development using technologies like Flutter, Dart, FastAPI, and Docker. Additionally, their academic endeavors, such as designing the Enlight device, reflect a commitment to research and innovation, particularly in areas related to audio processing and automation. Overall, they possess a versatile skill set and a track record of delivering impactful solutions across different industries and projects.''',
+                '''  The Blessings Mambwe's expertise spans a diverse range of domains, showcasing a strong background in data science, machine learning, and innovative technological solutions. With experience at companies like Absa Bank Innovation Hub, ML Collective, 
+                Konkola Copper Mines and Afrimeta, He has demonstrated proficiency in developing AI solutions, conducting research at the intersection of computer vision and reinforcement learning, and implementing efficient algorithms for various applications. His skills encompass Python programming, PyTorch, machine learning model development, data analysis, collaborative teamwork, innovative algorithm design, and full-stack development.
+                .''',
                 textAlign: TextAlign.justify,
                 style: const TextStyle(color: Colors.white),
               ),
@@ -58,9 +92,12 @@ class _AboutState extends State<About> {
           Row(
             children: [
               SizedBox(
-               width: 200,
+                width: 200,
                 height: 250,
                 child: Image.asset('andrewchileshe.jpg'),
+              ),
+              SizedBox(
+                width: 30,
               ),
               Column(
                 children: [
