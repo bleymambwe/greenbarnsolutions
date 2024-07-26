@@ -51,49 +51,6 @@ class _AboutState extends State<About> {
               SizedBox(
                 width: 200,
                 height: 250,
-                child: Image.asset('blessingsmambwe.jpg'),
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Column(
-                children: [
-                  Text(
-                    'Blessings Mambwe',
-                    style: TextStyle(fontSize: 23, color: Colors.grey),
-                  ),
-                  Text(
-                    'Co-Founder',
-                    style: TextStyle(
-                        color: Colors.blueGrey,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ],
-              )
-            ],
-          ),
-          const SizedBox(height: 16.0),
-          Expanded(
-            child: Container(
-              height: double.infinity,
-              child: Text(
-                '''  The Blessings Mambwe's expertise spans a diverse range of domains, showcasing a strong background in data science, machine learning, and innovative technological solutions. With experience at companies like Absa Bank Innovation Hub, ML Collective, 
-                Konkola Copper Mines and Afrimeta, He has demonstrated proficiency in developing AI solutions, conducting research at the intersection of computer vision and reinforcement learning, and implementing efficient algorithms for various applications. His skills encompass Python programming, PyTorch, machine learning model development, data analysis, collaborative teamwork, innovative algorithm design, and full-stack development.
-                .''',
-                textAlign: TextAlign.justify,
-                style: const TextStyle(color: Colors.white),
-              ),
-            ),
-          ),
-          SizedBox(
-            height: 55,
-          ),
-          Row(
-            children: [
-              SizedBox(
-                width: 200,
-                height: 250,
                 child: Image.asset('andrewchileshe.jpg'),
               ),
               SizedBox(
@@ -125,6 +82,50 @@ class _AboutState extends State<About> {
                 style: const TextStyle(color: Colors.white),
               ),
             ),
+          ),
+          const SizedBox(height: 16.0),
+          Row(
+            children: [
+              SizedBox(
+                width: 200,
+                height: 250,
+                child: Image.asset('blessingsmambwe.jpg'),
+              ),
+              SizedBox(
+                width: 30,
+              ),
+              Column(
+                children: [
+                  Text(
+                    'Blessings Mambwe',
+                    style: TextStyle(fontSize: 23, color: Colors.grey),
+                  ),
+                  Text(
+                    'Co-Founder',
+                    style: TextStyle(
+                        color: Colors.blueGrey,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              )
+            ],
+          ),
+          const SizedBox(height: 16.0),
+          Expanded(
+            child: Container(
+              height: double.infinity,
+              child: Text(
+                '''  Blessings Mambwe's expertise spans a diverse range of domains, showcasing a strong background in data science, machine learning, and innovative technological solutions. With experience at companies like Absa Bank Innovation Hub, ML Collective, 
+                Konkola Copper Mines and Afrimeta, He has demonstrated proficiency in developing AI solutions, conducting research at the intersection of computer vision and reinforcement learning, and implementing efficient algorithms for various applications. His skills encompass Python programming, PyTorch, machine learning model development, data analysis, collaborative teamwork, innovative algorithm design, and full-stack development.
+                .''',
+                textAlign: TextAlign.justify,
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 55,
           ),
         ],
       ),

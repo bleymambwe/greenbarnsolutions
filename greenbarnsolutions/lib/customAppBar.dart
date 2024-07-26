@@ -58,18 +58,18 @@ class _CustomAppBarState extends State<CustomAppBar> {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.005,
             ),
-            InkWell(
-              onTap: () {
-                ScreenStateProvider provider =
-                    Provider.of<ScreenStateProvider>(context, listen: false);
-                // Calling the updateState function
-                String state = 'Partner';
-                provider.updateState(state);
-              },
-              child: const HoverContainer(
-                text: 'Partner',
-              ),
-            ),
+            // InkWell(
+            //   onTap: () {
+            //     ScreenStateProvider provider =
+            //         Provider.of<ScreenStateProvider>(context, listen: false);
+            //     // Calling the updateState function
+            //     String state = 'Partner';
+            //     provider.updateState(state);
+            //   },
+            //   child: const HoverContainer(
+            //     text: 'Partner',
+            //   ),
+            // ),
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.005,
             ),

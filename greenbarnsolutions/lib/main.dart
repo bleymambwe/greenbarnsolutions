@@ -26,8 +26,14 @@ void main() async {
         ChangeNotifierProvider(
             create: (_) => ScreenStateProvider()) // Change this line
       ],
-      child: const MaterialApp(
+      child: MaterialApp(
         title: 'Green Barn Solutions',
+        theme: ThemeData(
+          fontFamily: GoogleFonts.play().fontFamily,
+          //primarySwatch: Colors.grey,
+          //scaffoldBackgroundColor: Colors.white
+          // mainColor
+        ),
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: Home(),
@@ -90,9 +96,9 @@ class _PageWidgetState extends State<PageWidget> {
             case 'Contact':
               child = const Contact();
               break;
-            case 'Partner':
-              child = const Partner();
-              break;
+            // case 'Partner':
+            //   child = const Partner();
+            //   break;
             default:
               child = Container();
               break;
